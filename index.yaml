@@ -2,10 +2,23 @@ apiVersion: v1
 entries:
   jaeger:
   - apiVersion: v1
-    appVersion: 1.16.0
-    created: "2019-12-18T16:48:17.675568259Z"
+    appVersion: 1.20.0
+    created: "2020-12-10T07:41:31.782567319Z"
+    dependencies:
+    - condition: provisionDataStore.cassandra
+      name: cassandra
+      repository: https://kubernetes-charts-incubator.storage.googleapis.com/
+      version: 0.15.3
+    - condition: provisionDataStore.elasticsearch
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ^7.5.1
+    - condition: provisionDataStore.kafka
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: ^11.8.4
     description: A Jaeger Helm chart for Kubernetes
-    digest: dabe758b28c85e99b008f318705a2c4bfaa756b4d43c074cc33847ed0256310e
+    digest: ebffdd0946f55f2c1fb52d5019094de07186a7225900c2904017c518a83eef78
     home: https://jaegertracing.io
     icon: https://camo.githubusercontent.com/afa87494e0753b4b1f5719a2f35aa5263859dffb/687474703a2f2f6a61656765722e72656164746865646f63732e696f2f656e2f6c61746573742f696d616765732f6a61656765722d766563746f722e737667
     keywords:
@@ -26,95 +39,14 @@ entries:
     sources:
     - https://hub.docker.com/u/jaegertracing/
     urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-0.17.6/jaeger-0.17.6.tgz
-    version: 0.17.6
-  - apiVersion: v1
-    appVersion: 1.15.1
-    created: "2019-12-18T15:50:03.111915213Z"
-    description: A Jaeger Helm chart for Kubernetes
-    digest: 119859aee7258bde807fc1a337210af92c749db83a0489d5ef9bc8e347d6209f
-    home: https://jaegertracing.io
-    icon: https://camo.githubusercontent.com/afa87494e0753b4b1f5719a2f35aa5263859dffb/687474703a2f2f6a61656765722e72656164746865646f63732e696f2f656e2f6c61746573742f696d616765732f6a61656765722d766563746f722e737667
-    keywords:
-    - jaeger
-    - opentracing
-    - tracing
-    - instrumentation
-    maintainers:
-    - email: david.vonthenen@dell.com
-      name: dvonthenen
-    - email: michael.lorant@fairfaxmedia.com.au
-      name: mikelorant
-    - email: naseem@transit.app
-      name: naseemkullah
-    - email: pavel.nikolov@fairfaxmedia.com.au
-      name: pavelnikolov
-    name: jaeger
-    sources:
-    - https://hub.docker.com/u/jaegertracing/
-    urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-0.17.5/jaeger-0.17.5.tgz
-    version: 0.17.5
-  - apiVersion: v1
-    appVersion: 1.15.1
-    created: "2019-12-17T22:14:43.260071975Z"
-    description: A Jaeger Helm chart for Kubernetes
-    digest: 02e32ce68fd4dc7212499e9e59fb549f7901a6a2606c49d69febdfd6f3cb7669
-    home: https://jaegertracing.io
-    icon: https://camo.githubusercontent.com/afa87494e0753b4b1f5719a2f35aa5263859dffb/687474703a2f2f6a61656765722e72656164746865646f63732e696f2f656e2f6c61746573742f696d616765732f6a61656765722d766563746f722e737667
-    keywords:
-    - jaeger
-    - opentracing
-    - tracing
-    - instrumentation
-    maintainers:
-    - email: david.vonthenen@dell.com
-      name: dvonthenen
-    - email: michael.lorant@fairfaxmedia.com.au
-      name: mikelorant
-    - email: naseem@transit.app
-      name: naseemkullah
-    - email: pavel.nikolov@fairfaxmedia.com.au
-      name: pavelnikolov
-    name: jaeger
-    sources:
-    - https://hub.docker.com/u/jaegertracing/
-    urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-0.17.4/jaeger-0.17.4.tgz
-    version: 0.17.4
-  - apiVersion: v1
-    appVersion: 1.15.1
-    created: "2019-12-17T03:38:29.454005043Z"
-    description: A Jaeger Helm chart for Kubernetes
-    digest: 1d29dc5336c3cf4dd09768a77570ebcb3fb87495573cae8a2f295da231a46b79
-    home: https://jaegertracing.io
-    icon: https://camo.githubusercontent.com/afa87494e0753b4b1f5719a2f35aa5263859dffb/687474703a2f2f6a61656765722e72656164746865646f63732e696f2f656e2f6c61746573742f696d616765732f6a61656765722d766563746f722e737667
-    keywords:
-    - jaeger
-    - opentracing
-    - tracing
-    - instrumentation
-    maintainers:
-    - email: david.vonthenen@dell.com
-      name: dvonthenen
-    - email: michael.lorant@fairfaxmedia.com.au
-      name: mikelorant
-    - email: naseem@transit.app
-      name: naseemkullah
-    - email: pavel.nikolov@fairfaxmedia.com.au
-      name: pavelnikolov
-    name: jaeger
-    sources:
-    - https://hub.docker.com/u/jaegertracing/
-    urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-0.17.3/jaeger-0.17.3.tgz
-    version: 0.17.3
+    - https://github.com/naseemkullah/helm-charts-1/releases/download/jaeger-0.39.3/jaeger-0.39.3.tgz
+    version: 0.39.3
   jaeger-operator:
   - apiVersion: v1
-    appVersion: 1.16.0
-    created: "2019-12-18T16:48:17.794954889Z"
+    appVersion: 1.19.0
+    created: "2020-12-10T07:41:31.881912051Z"
     description: jaeger-operator Helm chart for Kubernetes
-    digest: 78914d0212e8104d695a5fd7cbf85aeb4735431fef3057c1b1a29d5a3d30b9f7
+    digest: d1a46ad19f1f114cbbee53fe872f3cf72628119152df13261997c6315e2f50ce
     home: https://www.jaegertracing.io/
     icon: https://www.jaegertracing.io/img/jaeger-icon-reverse-color.svg
     maintainers:
@@ -124,38 +56,6 @@ entries:
       name: batazor
     name: jaeger-operator
     urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-operator-2.12.3/jaeger-operator-2.12.3.tgz
-    version: 2.12.3
-  - apiVersion: v1
-    appVersion: 1.15.1
-    created: "2019-12-17T22:18:10.694763646Z"
-    description: jaeger-operator Helm chart for Kubernetes
-    digest: 770034a915b6445cd06befa17b0eaec7f663027d3c63900fbd3ef42a07de2f83
-    home: https://www.jaegertracing.io/
-    icon: https://www.jaegertracing.io/img/jaeger-icon-reverse-color.svg
-    maintainers:
-    - email: ctadeu@gmail.com
-      name: cpanato
-    - email: batazor111@gmail.com
-      name: batazor
-    name: jaeger-operator
-    urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-operator-2.12.2/jaeger-operator-2.12.2.tgz
-    version: 2.12.2
-  - apiVersion: v1
-    appVersion: 1.15.1
-    created: "2019-12-17T03:38:29.573409952Z"
-    description: jaeger-operator Helm chart for Kubernetes
-    digest: 085b165faf70e7370309f8bbc2a0a40089701a77ddc5dae1e68f668275a293fd
-    home: https://www.jaegertracing.io/
-    icon: https://www.jaegertracing.io/img/jaeger-icon-reverse-color.svg
-    maintainers:
-    - email: ctadeu@gmail.com
-      name: cpanato
-    - email: batazor111@gmail.com
-      name: batazor
-    name: jaeger-operator
-    urls:
-    - https://github.com/jaegertracing/helm-charts/releases/download/jaeger-operator-2.12.1/jaeger-operator-2.12.1.tgz
-    version: 2.12.1
-generated: "2019-12-17T03:38:29.332402135Z"
+    - https://github.com/naseemkullah/helm-charts-1/releases/download/jaeger-operator-2.17.0/jaeger-operator-2.17.0.tgz
+    version: 2.17.0
+generated: "2020-12-10T07:41:31.636240736Z"
